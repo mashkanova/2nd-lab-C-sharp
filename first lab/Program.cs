@@ -83,18 +83,42 @@ namespace first_lab
             Console.WriteLine(line5);
             int startIndex = 2;
             int length = 4;
+            //выделение подстроки
             String substring = line1.Substring(startIndex, length);
             Console.WriteLine(substring);
+            //разделение строкии на слова
             string[] words = line3.Split(' ');
 
             foreach (var sub in words)
             {
                 Console.WriteLine($"Substring: {sub}");
             }
+            //вставка подстроки в заданную позицию
             string line6 = line1.Insert(15, line2);
             Console.WriteLine(line6);
+            //удаление подстроки
             string line7 = line3.Remove(0, 5);
             Console.WriteLine(line7);
+            //null or empty
+            bool TestForNullOrEmpty(string st)
+            {
+                bool result;
+                result = st == null || st == string.Empty;
+                return result;
+            }
+            string line8 = "";
+            string line9 = null;
+
+            Console.WriteLine(TestForNullOrEmpty(line8));
+            Console.WriteLine(TestForNullOrEmpty(line9));
+            // string based on stringBuilder
+            StringBuilder sb = new StringBuilder(" my brain just like $^&*& *^%$#$%^&* ");
+            sb.Remove(20, 6);
+            Console.WriteLine(sb);
+            sb.Insert(0, "Hello!");
+            Console.WriteLine(sb);
+            sb.AppendFormat("(it's alright)");
+            Console.WriteLine(sb);
         }
     }
 }
